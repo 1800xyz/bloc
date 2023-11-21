@@ -1,14 +1,14 @@
 import { getPosts } from "@/sanity/sanity-utils";
 import { PortableText } from '@portabletext/react';
 
-export default async function Home() {
 
+export default async function Main() {
+  
   const posts = await getPosts();
   const main = posts[0];
 
   return (
-  <div className="ml-24 w-7/12">
-    <div className="mt-24">
+    <div className="ml-4 mt-24">
       <h2 className="text-inky text-3xl">
         {main.title}</h2>
       
@@ -16,6 +16,6 @@ export default async function Home() {
         <PortableText value={main.body} />
       </div>
     </div>
-  </div>
   )
+
 }
